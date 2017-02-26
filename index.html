@@ -6,19 +6,25 @@
         <script type="text/javascript" src="d3/d3.js"></script>
     </head>
     <body>
+        <style type = "text/css">
+            div.bar {
+                display: inline-block;
+                width: 20px;
+                height: 75px;   /* We'll override this later */
+                background-color: teal;
+                margin-right: 2px;
+            }
+        </style>
         <script type="text/javascript">
             var dataset = [ 5, 10, 15, 20, 25 ];
-            d3.select("body").selectAll("p")
+            d3.select("body").selectAll("div")
                 .data(dataset)
                 .enter()
-                .append("p")
-                .text(function(d) { return "I can count up to " + d; })
-                .style("color", function(d) {
-                    if (d > 15) {   //Threshold of 15
-                        return "red";
-                    } else {
-                        return "black";
-                    }
+                .append("div")
+                .attr("class", "bar")
+                .style("height", function(d) {
+                    var barHeight = d * 5;  //Scale up by factor of 5
+                    return barHeight + "px";
                 });
         </script>
     </body>
