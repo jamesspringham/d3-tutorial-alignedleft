@@ -6,3 +6,8 @@ From Terminal, navigate to project folder and enter
 
 In Chrome navigate to http://127.0.0.1:8080
 Right-click and inspect to see elements, console, etc.
+
+Git command line e.g.
+> git add index.html
+> git commit -m "tutorial 8"
+> git push
